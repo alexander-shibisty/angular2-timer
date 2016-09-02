@@ -18,9 +18,6 @@ export class AppComponent implements OnInit {
 	}
 
 	public ngOnInit() {
-		let date = new Date;
-		let realTime = date.getTime();
-
 		this.timestamp = parseInt($(this.element.nativeElement).attr('timestamp'));
 
 		setInterval(() => {
@@ -37,12 +34,12 @@ export class AppComponent implements OnInit {
 		let waitDays    = Math.floor(timeDiff / 1000 / 60 / 60 / 24);
 		let waitHours   = Math.floor((timeDiff / 1000 / 60 / 60) % 24);
 		let waitMinutes = Math.floor((timeDiff / 1000 / 60) % 60);
-		let waitSecond  = Math.floor((timeDiff / 1000) % 60);
+		let waitSeconds  = Math.floor((timeDiff / 1000) % 60);
 
 		text = this.addZero(waitDays)
 		+ ' :' + this.addZero(waitHours)
 		+ ' :' + this.addZero(waitMinutes)
-		+ ' :' + this.addZero(waitSecond);
+		+ ' :' + this.addZero(waitSeconds);
 
 		this.text = text;
 	}
